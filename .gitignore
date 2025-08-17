@@ -405,3 +405,17 @@ Makefile
 *.swp
 *.swo
 *.swn
+
+# Raylib-specific build folders (if used)
+raylib/
+raylib-master/
+
+# CMake build folders (if you use CMake)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Custom build folders
+build/
+dist/
