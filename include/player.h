@@ -21,7 +21,9 @@ class Player
         * @brief Processes player input for movement and rotation, updates the ship's position and velocity, and renders the ship on the screen.
         */
         void ProcessInput();
+        void UpdatePhysics(float deltaTime);
         Texture2D playerShipTexture;
+
     private:
         const float dampeningFactor = 0.99f;
         const float playerAngularDampeningFactor = 0.98f;
@@ -39,6 +41,21 @@ class Player
 
         Rectangle playerShipSource;
         Rectangle playerShipDest;
+
+        Texture2D thrusterTexture;
+        Rectangle thrusterSource;
+        Rectangle thrusterDest;
+        Vector2 thrusterOrigin;
+        Vector2 thrusterOffset;
+
+        int thrusterFrameCount = 4;
+        int currentThrusterFrame = 0;
+        float thrusterFrameWidth;
+        float thrusterFrameHeight;
+        float thrusterAnimTimer = 0.0f;
+        float thrusterAnimSpeed = 0.1f; // seconds per frame
+        float thrusterScale = 2.0f;
+        bool isThrusting = false;
 };
 
 #endif

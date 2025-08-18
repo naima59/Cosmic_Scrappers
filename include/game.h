@@ -29,6 +29,7 @@ public:
     
 private:
     std::vector<Texture2D> textures;
+    Texture2D backgroundTexture;
     Player player;
 
 };
